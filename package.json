@@ -1,0 +1,30 @@
+{
+    "name": "npm-front",
+    "version": "0.0.1",
+    "description": "Use npm for managing front-end packaging",
+    "main": "app.js",
+    "scripts": {
+        "build-js": "browserify js/main.js -o build/main.js",
+        "build-js-min": "browserify js/main.js | uglifyjs -o build/main.js",
+        "build-css": "cleancss css/style.css -o build/style.css",
+        "watch-js": "nodemon -e js -w js -x 'npm run build-js'",
+        "watch-css": "nodemon -e css -w css -x 'npm run build-css'",
+        "build": "npm run build-js-min & npm run build-css",
+        "watch": "npm run watch-js & npm run watch-css"
+    },
+    "author": "Khaled Hossain",
+    "license": "GNU",
+    "dependencies": {
+        "bootstrap": "^3.3.6",
+        "express": "^4.14.0",
+        "jquery": "^3.1.0"
+    },
+    "devDependencies": {
+        "browserify": "^13.0.1",
+        "clean-css": "^3.4.18",
+        "node-sass": "^3.8.0",
+        "nodemon": "^1.9.2",
+        "uglifyjs": "^2.4.10",
+        "watchify": "^3.7.0"
+    }
+}
