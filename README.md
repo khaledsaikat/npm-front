@@ -22,4 +22,18 @@ and start your http server
 node app.js
 ```
 
-Then visit [(http://localhost:3000/](http://localhost:3000/) to see the output.
+Then visit [http://localhost:3000/](http://localhost:3000/) to see the output.
+
+## Explanation
+
+`js/main.js` contains necessary `javascript` code. But browser doesn't understand `require`. So we run `npm run build` to bind all `javascript` code to a single file in `build/app.js`. Have a look on `package.json` file.
+
+## Development
+Everytime when we make change on `javascript` files we need to bind it with necessary library. We can use nodemon to automate the process.
+
+Use following commnad to automate generating our converted `javascript`.
+
+```
+npm run watch
+```
+
